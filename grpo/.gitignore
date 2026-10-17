@@ -1,0 +1,17 @@
+/outputs/
+/data/
+/datasets/
+/models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.arrow
+*.parquet
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.DS_Store
+._*

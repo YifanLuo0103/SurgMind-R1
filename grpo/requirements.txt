@@ -1,0 +1,24 @@
+torch==2.5.1
+torchvision==0.20.1
+transformers==5.0.0
+trl==0.27.0
+peft==0.18.1
+datasets==4.4.2
+tokenizers==0.22.2
+accelerate==1.12.0
+deepspeed==0.15.4
+huggingface-hub==1.3.1
+numpy==1.26.4
+pillow==12.1.0
+qwen-vl-utils==0.0.14
+math-verify==0.9.0
+bitsandbytes==0.49.1
+liger_kernel==0.5.2
+einops==0.8.1
+safetensors==0.7.0
+sentencepiece==0.2.1
+packaging==25.0
+PyYAML==6.0.3
+tensorboard==2.20.0
+wandb==0.18.3
+# Install flash-attn==2.8.3 separately after torch, with --no-build-isolation.

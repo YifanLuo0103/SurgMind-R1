@@ -1,0 +1,62 @@
+### Stage 2 training command.
+
+### model
+model_name_or_path: path/to/your/models/stage1_model
+trust_remote_code: true
+template: qwen2_vl
+
+### method
+stage: sft
+do_train: true
+do_eval: true
+finetuning_type: lora
+lora_rank: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target: all
+
+### vision
+freeze_vision_tower: true
+freeze_multi_modal_projector: true
+image_max_pixels: 589824
+
+### dataset
+dataset: surg_think
+dataset_dir: data
+val_size: 0.1
+cutoff_len: 2048
+media_dir: path/to/your/data/images
+seed: 42
+
+### output
+output_dir: outputs/stage2
+logging_steps: 10
+save_steps: 100
+eval_steps: 50
+eval_strategy: steps
+save_strategy: steps
+plot_loss: true
+
+### train
+bf16: true
+flash_attn: fa2
+gradient_checkpointing: true
+per_device_train_batch_size: 4
+per_device_eval_batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+num_train_epochs: 6.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+
+### performance
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### eval
+include_tokens_per_second: true
+include_num_input_tokens_seen: true
+
+### misc
+report_to: none
+
